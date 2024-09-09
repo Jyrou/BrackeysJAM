@@ -10,5 +10,5 @@ func _ready() -> void:
 func _on_timer_timeout():
 	if(mood.frame == 1):
 		mood.set_frame(0)
-	if(mood.frame == 0):
+	elif(mood.frame == 0):
 		print("Colocar o shake aqui")
