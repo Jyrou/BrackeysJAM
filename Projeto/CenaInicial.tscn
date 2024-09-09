@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://playerScript.gd" id="1_35msx"]
 [ext_resource type="Texture2D" uid="uid://hya4h5xcxmkn" path="res://Sprites/Player_placeholder.png" id="1_se4kf"]
 [ext_resource type="TileSet" uid="uid://bortlou72jjgl" path="res://Tileset_PLACEHOLDER.tres" id="2_a7rvq"]
-[ext_resource type="Texture2D" uid="uid://2puca73n6het" path="res://Sprites/EmojiClientes.png" id="4_xyqee"]
+[ext_resource type="PackedScene" uid="uid://bgb2tbp0tk0te" path="res://Scenes/NPC.tscn" id="4_yyk3m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmkcb"]
 atlas = ExtResource("1_se4kf")
@@ -152,5 +152,5 @@ tile_set = ExtResource("2_a7rvq")
 position = Vector2(29, 16)
 zoom = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("4_xyqee")
+[node name="NPC" parent="." instance=ExtResource("4_yyk3m")]
+position = Vector2(-75, 22)
