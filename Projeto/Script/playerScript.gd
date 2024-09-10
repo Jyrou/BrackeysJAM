@@ -15,11 +15,20 @@ func _process(_delta):
 		animatedSprite.speed_scale = 1
 	update_animation()
 
+#WIP // Não está tão responsivo ainda
 func _physics_process(_delta):
-	directionVector = Input.get_vector("left", "right", "up", "down")
+	var x_direction = Input.get_action_strength("right") - Input.get_action_strength("left")
+	var y_direction = Input.get_action_strength("down") - Input.get_action_strength("up")
+	
+	if x_direction != 0:
+		directionVector = Vector2(x_direction, 0)
+	elif y_direction != 0:
+		directionVector = Vector2(0, y_direction)
+	else:
+		directionVector = Vector2.ZERO
+
 	velocity = directionVector.normalized() * SPEED
 	move_and_slide()
-	
 
 func update_animation():
 	if velocity.y < 0:
