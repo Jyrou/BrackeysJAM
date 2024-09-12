@@ -60,4 +60,3 @@ func update_animation():
 	else:
 		animation = "idleDown"
 	animatedSprite.play(animation)
-	

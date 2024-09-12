@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://blxxl4ekh1r80"]
+
+[ext_resource type="Script" path="res://Script/egg.gd" id="1_j7rek"]
+[ext_resource type="Texture2D" uid="uid://bu6kc5v72ixrk" path="res://Sprites/Food/sprite-sheet-linha.png" id="1_lk70q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ro81"]
+atlas = ExtResource("1_lk70q")
+region = Rect2(68, 0, 16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eoxyk"]
+radius = 4.0
+height = 10.0
+
+[node name="Egg" type="Area2D"]
+script = ExtResource("1_j7rek")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
+texture = SubResource("AtlasTexture_3ro81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_eoxyk")
