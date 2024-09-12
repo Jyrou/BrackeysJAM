@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t720pnf4k1f8"
-path="res://.godot/imported/PlayerCat2.png-8cb748aa1f6d04e07dbff58216301752.ctex"
+uid="uid://dr3eb1tnvwxti"
+path="res://.godot/imported/furniture-sprite-sheet-linha.png-700b533cf02d339d3d4baf9122b59212.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerCat2.png"
-dest_files=["res://.godot/imported/PlayerCat2.png-8cb748aa1f6d04e07dbff58216301752.ctex"]
+source_file="res://Sprites/Furniture and Structure/furniture-sprite-sheet-linha.png"
+dest_files=["res://.godot/imported/furniture-sprite-sheet-linha.png-700b533cf02d339d3d4baf9122b59212.ctex"]
 
 [params]
 
