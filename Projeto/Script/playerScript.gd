@@ -20,18 +20,34 @@ func _physics_process(_delta):
 	var x_direction = Input.get_action_strength("right") - Input.get_action_strength("left")
 	var y_direction = Input.get_action_strength("down") - Input.get_action_strength("up")
 	
-	if x_direction != 0:
-		directionVector = Vector2(x_direction, 0)
-	elif y_direction != 0:
-		directionVector = Vector2(0, y_direction)
+	#if x_direction != 0:
+	#	directionVector = Vector2(x_direction, 0)
+	#elif y_direction != 0:
+	#	directionVector = Vector2(0, y_direction)
+	#else:
+	#	directionVector = Vector2.ZERO
+	if x_direction !=0 or y_direction != 0:
+		directionVector = Vector2(x_direction,y_direction)
 	else:
 		directionVector = Vector2.ZERO
-
+	
 	velocity = directionVector.normalized() * SPEED
 	move_and_slide()
 
 func update_animation():
-	if velocity.y < 0:
+	if velocity.y<0 and velocity.x<0:
+		animation = "upDiagonal"
+		animatedSprite.flip_h = false
+	elif velocity.y<0 and velocity.x>0:
+		animation = "upDiagonal"
+		animatedSprite.flip_h = true
+	elif velocity.y>0 and velocity.x<0:
+		animation = "downDiagonal"
+		animatedSprite.flip_h = false
+	elif velocity.y>0 and velocity.x>0:
+		animation = "downDiagonal"
+		animatedSprite.flip_h = true
+	elif velocity.y < 0:
 		animation = "up"
 	elif velocity.y > 0:
 		animation = "down"
@@ -44,3 +60,4 @@ func update_animation():
 	else:
 		animation = "idleDown"
 	animatedSprite.play(animation)
+	
