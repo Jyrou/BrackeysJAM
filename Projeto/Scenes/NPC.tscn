@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bgb2tbp0tk0te"]
+[gd_scene load_steps=36 format=3 uid="uid://bgb2tbp0tk0te"]
 
 [ext_resource type="Script" path="res://Script/NPC.gd" id="1_5rbn8"]
 [ext_resource type="Texture2D" uid="uid://0m7pupwi8w0n" path="res://Sprites/EmojiClientes.png" id="2_5bxm8"]
 [ext_resource type="Texture2D" uid="uid://00fjcsx72ao5" path="res://Sprites/CatNPC2.png" id="3_8mcbj"]
+[ext_resource type="Texture2D" uid="uid://dv28ahrsglvf7" path="res://Sprites/EmojiPequeno.png" id="4_crx0b"]
 [ext_resource type="Texture2D" uid="uid://dvkd1twnrqjoe" path="res://Sprites/CatNPC.png" id="4_frgm6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wdre"]
@@ -185,6 +186,59 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_xk4uy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ufl0"]
+size = Vector2(11, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3tx8"]
+atlas = ExtResource("4_crx0b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6lv0"]
+atlas = ExtResource("2_5bxm8")
+region = Rect2(11, 0, 11, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2dhm"]
+atlas = ExtResource("4_crx0b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3eso"]
+atlas = ExtResource("4_crx0b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2w65"]
+atlas = ExtResource("2_5bxm8")
+region = Rect2(0, 0, 11, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdchb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3tx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6lv0")
+}],
+"loop": false,
+"name": &"inicioBle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2dhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3eso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2w65")
+}],
+"loop": false,
+"name": &"trocaBle",
+"speed": 3.0
+}]
+
 [node name="NPC" type="Area2D"]
 position = Vector2(0, -9)
 script = ExtResource("1_5rbn8")
@@ -194,13 +248,18 @@ sprite_frames = SubResource("SpriteFrames_8pcak")
 animation = &"Idle"
 offset = Vector2(0.5, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -18)
-texture = ExtResource("2_5bxm8")
-hframes = 3
-frame = 1
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+script = SubResource("GDScript_xk4uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_8ufl0")
+
+[node name="AnimatedSpriteMood" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_jdchb")
+animation = &"trocaBle"
+autoplay = "inicioBle"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
