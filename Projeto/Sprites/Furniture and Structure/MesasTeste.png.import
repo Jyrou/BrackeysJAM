@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvkd1twnrqjoe"
-path="res://.godot/imported/CatNPC.png-5892dccbc7638b3049009ba559022646.ctex"
+uid="uid://bxra6mygynya7"
+path="res://.godot/imported/MesasTeste.png-33948fe908dba9ee8e9f66c0d78722c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/CatNPC.png"
-dest_files=["res://.godot/imported/CatNPC.png-5892dccbc7638b3049009ba559022646.ctex"]
+source_file="res://Sprites/Furniture and Structure/MesasTeste.png"
+dest_files=["res://.godot/imported/MesasTeste.png-33948fe908dba9ee8e9f66c0d78722c8.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Script/NPC.gd" id="1_5rbn8"]
 [ext_resource type="Texture2D" uid="uid://0m7pupwi8w0n" path="res://Sprites/EmojiClientes.png" id="2_5bxm8"]
-[ext_resource type="Texture2D" uid="uid://00fjcsx72ao5" path="res://Sprites/CatNPC2.png" id="3_8mcbj"]
-[ext_resource type="Texture2D" uid="uid://dvkd1twnrqjoe" path="res://Sprites/CatNPC.png" id="4_frgm6"]
+[ext_resource type="Texture2D" uid="uid://00fjcsx72ao5" path="res://Sprites/CharacterSprites/CatNPC2.png" id="3_8mcbj"]
+[ext_resource type="Texture2D" uid="uid://dvkd1twnrqjoe" path="res://Sprites/CharacterSprites/CatNPC.png" id="4_frgm6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wdre"]
 atlas = ExtResource("4_frgm6")
